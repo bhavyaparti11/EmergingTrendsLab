@@ -1,0 +1,120 @@
+{
+  "project_name": "SmartMeal",
+  "design_philosophy": {
+    "theme": "Organic Vibrance",
+    "emotion": "Warm, Appetizing, Fresh, Connected",
+    "core_concept": "Digital Kitchen Assistant that feels like a family heirloom cookbook."
+  },
+  "typography": {
+    "font_family_heading": "Playfair Display, serif",
+    "font_family_body": "Inter, sans-serif",
+    "scale": {
+      "h1": "text-4xl md:text-5xl font-bold tracking-tight",
+      "h2": "text-3xl font-semibold tracking-tight",
+      "h3": "text-2xl font-medium",
+      "body": "text-base leading-relaxed",
+      "caption": "text-sm text-muted-foreground",
+      "button": "text-sm font-medium uppercase tracking-wide"
+    }
+  },
+  "colors": {
+    "primary": {
+      "DEFAULT": "#ea580c", 
+      "foreground": "#ffffff",
+      "hover": "#c2410c",
+      "description": "Burnt Orange - Used for main CTAs, 'Cook Now' buttons, and active states. Represents heat, spice, and appetite."
+    },
+    "secondary": {
+      "DEFAULT": "#15803d",
+      "foreground": "#ffffff",
+      "description": "Basil Green - Used for 'Vegetarian' tags, success states, and fresh ingredient highlights."
+    },
+    "background": {
+      "DEFAULT": "#fafaf9",
+      "paper": "#ffffff",
+      "dark": "#1c1917",
+      "description": "Warm Stone/Eggshell - Avoids clinical white. Creates a paper-like feel."
+    },
+    "accent": {
+      "DEFAULT": "#f5f5f4",
+      "foreground": "#292524",
+      "description": "Warm Gray - Used for secondary buttons and card backgrounds."
+    },
+    "text": {
+      "primary": "#292524",
+      "secondary": "#57534e",
+      "muted": "#a8a29e"
+    }
+  },
+  "visual_enhancers": {
+    "border_radius": "rounded-xl", 
+    "shadows": {
+      "card": "shadow-[0_2px_8px_rgba(0,0,0,0.08)]",
+      "floating": "shadow-[0_8px_30px_rgba(0,0,0,0.12)]"
+    },
+    "textures": "Subtle noise overlay (opacity 0.03) on backgrounds to mimic paper texture.",
+    "gradients": "No full-screen gradients. Use subtle top-down fades in Hero sections: 'bg-gradient-to-b from-orange-50/50 to-transparent'."
+  },
+  "layout_strategy": {
+    "mobile_first": true,
+    "container_padding": "p-6 md:p-8 lg:p-12",
+    "grid_system": {
+      "dashboard": "grid grid-cols-1 md:grid-cols-12 gap-6",
+      "recipe_feed": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    },
+    "navigation": {
+      "mobile": "Fixed bottom bar with iconic navigation.",
+      "desktop": "Clean top navbar with 'Playfair' logo on left."
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary text-white rounded-full px-8 py-6 hover:scale-105 transition-transform shadow-lg",
+      "secondary": "bg-white border-2 border-orange-100 text-orange-700 rounded-full px-6 hover:bg-orange-50"
+    },
+    "cards": {
+      "recipe": "bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-floating transition-shadow duration-300 group cursor-pointer",
+      "pantry_item": "flex items-center justify-between p-4 bg-white rounded-xl border border-stone-100 shadow-sm"
+    },
+    "inputs": {
+      "search": "bg-white border-none shadow-inner rounded-full py-6 pl-12 text-lg focus:ring-2 focus:ring-orange-200"
+    },
+    "images": {
+       "style": "High contrast, top-down food photography. Rounded corners on all images."
+    }
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1700227280140-ee5a75cc096b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwzfHxmcmVzaCUyMGluZGlhbiUyMHNwaWNlcyUyMGluZ3JlZGllbnRzJTIwb3ZlcmhlYWR8ZW58MHx8fHwxNzc0MTA2MjM3fDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Colorful Indian spices on white plate"
+    },
+    "pantry_empty_state": {
+      "url": "https://images.unsplash.com/photo-1675654871683-abf6524f68c6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHw0fHxmcmVzaCUyMGluZGlhbiUyMHNwaWNlcyUyMGluZ3JlZGllbnRzJTIwb3ZlcmhlYWR8ZW58MHx8fHwxNzc0MTA2MjM3fDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Clean plate with spices"
+    },
+    "family_cooking": {
+      "url": "https://images.pexels.com/photos/5082870/pexels-photo-5082870.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Family cooking together"
+    },
+    "landing_generations": {
+      "url": "https://images.unsplash.com/photo-1758874960855-3f74e8704a1d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwyfHxoYXBweSUyMGZhbWlseSUyMGNvb2tpbmclMjBraXRjaGVufGVufDB8fHx8MTc3NDEwNjIzOHww&ixlib=rb-4.1.0&q=85",
+      "alt": "Three generations of women"
+    }
+  },
+  "component_mappings": {
+    "PantryList": "Custom component using Shadcn 'ScrollArea'. Items are swipeable rows.",
+    "RecipeCard": "Custom component. Image height: 200px (mobile) / 250px (desktop). Content overlay on bottom gradient.",
+    "UploadZone": "Dashed border area with 'Camera' icon. Uses 'react-dropzone' logic but styled as a placemat.",
+    "FamilyProfile": "Avatar-based grid. Use Shadcn 'Avatar' with colored rings indicating spice tolerance (Green=Mild, Orange=Medium, Red=Hot)."
+  },
+  "universal_guidelines": [
+    "Do NOT use pure black (#000000). Use #1c1917 or #292524.",
+    "Do NOT use standard blue for links. Use Orange-700.",
+    "Always add 'font-serif' to Headings (h1, h2, h3).",
+    "Buttons must be 'rounded-full' for a friendly, organic feel.",
+    "Use 'sonner' for all toast notifications (e.g., 'Tomato added to pantry').",
+    "All interactive elements MUST have 'data-testid'.",
+    "Animations: Use 'framer-motion' for entering items in the pantry list (staggerChildren).",
+    "Orange and Green theme is mandatory. Use them for semantic meaning (Orange=Action/Heat, Green=Veg/Freshness)."
+  ]
+}
