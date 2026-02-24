@@ -233,11 +233,11 @@ def main():
     print("🍽️ SmartMeal API Testing Suite")
     print("=" * 50)
     
-    # Create test user and session
-    user_id, session_token = create_test_user_and_session()
-    if not user_id or not session_token:
-        print("❌ Cannot proceed without test user")
-        return 1
+    # Use provided test session token
+    session_token = "test_session_1774106897803"
+    user_id = "test-user-existing"  # Existing test user
+    
+    print(f"🔑 Using provided session token: {session_token}")
     
     # Initialize tester
     tester = SmartMealAPITester()
@@ -245,7 +245,7 @@ def main():
     tester.session_token = session_token
     
     # Run tests
-    print(f"\n🔑 Using session token: {session_token[:20]}...")
+    print(f"\n🔑 Testing with existing session...")
     
     # Test basic endpoints
     tester.test_root_endpoint()
@@ -255,7 +255,6 @@ def main():
     success, user_data = tester.run_test("Auth Me (With Token)", "GET", "auth/me", 200)
     if not success:
         print("❌ Authentication failed, stopping tests")
-        cleanup_test_data()
         return 1
     
     # Test CRUD operations
@@ -275,9 +274,6 @@ def main():
     print(f"   ✅ Pantry Operations: Working" if pantry_success else "   ❌ Pantry Operations: Failed")
     print(f"   ✅ Family Operations: Working" if family_success else "   ❌ Family Operations: Failed")
     print(f"   ✅ AI Endpoints: Working" if ai_success else "   ❌ AI Endpoints: Failed")
-    
-    # Clean up
-    cleanup_test_data()
     
     return 0 if tester.tests_passed == tester.tests_run else 1
 

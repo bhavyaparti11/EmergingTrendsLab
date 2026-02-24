@@ -311,7 +311,7 @@ async def detect_ingredients(file: UploadFile = File(...), user: User = Depends(
 Return ONLY a JSON array of detected ingredients with their estimated quantities. Format:
 [{"name": "ingredient name", "quantity": "estimated amount", "unit": "unit like kg, pcs, etc", "category": "vegetables/fruits/dairy/meat/grains/spices/other"}]
 Be specific with Indian ingredients like dal, atta, paneer, etc."""
-    ).with_model("openai", "gpt-5.2-mini")
+    ).with_model("openai", "gpt-5-mini")
     
     image_content = ImageContent(image_base64=base64_image)
     user_message = UserMessage(
@@ -384,7 +384,7 @@ Focus on Indian cuisine but include popular international dishes too. Consider a
         api_key=api_key,
         session_id=f"recipe_{user.user_id}_{uuid.uuid4().hex[:8]}",
         system_message="You are a helpful Indian home cooking expert. Return only valid JSON arrays."
-    ).with_model("openai", "gpt-5.2-mini")
+    ).with_model("openai", "gpt-5-mini")
     
     response = await chat.send_message(UserMessage(text=prompt))
     
