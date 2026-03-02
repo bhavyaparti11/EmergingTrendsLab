@@ -46,13 +46,6 @@ const Landing = () => {
                 >
                   Get Started Free
                 </Button>
-                <Button 
-                  variant="outline"
-                  className="border-2 border-orange-200 text-orange-700 rounded-full px-8 py-6 text-lg hover:bg-orange-50"
-                  data-testid="learn-more-btn"
-                >
-                  Learn More
-                </Button>
               </div>
             </div>
             

@@ -316,7 +316,7 @@ Be specific with Indian ingredients like dal, atta, paneer, etc."""
     image_content = ImageContent(image_base64=base64_image)
     user_message = UserMessage(
         text="Identify all food ingredients in this grocery photo. Return only the JSON array.",
-        image_contents=[image_content]
+        file_contents=[image_content]
     )
     
     response = await chat.send_message(user_message)
