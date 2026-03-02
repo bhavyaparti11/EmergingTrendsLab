@@ -45,6 +45,15 @@ body {
     }
 }
 
+/* Hide Emergent badge */
+#emergent-badge,
+a[href*="emergent-badge"],
+a[href*="emergentagent.com"][style*="position: fixed"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
 @layer base {
     * {
         @apply border-border;
