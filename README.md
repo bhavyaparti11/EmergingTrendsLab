@@ -262,4 +262,4 @@ npm run dev
 
 ## License
 
-This project is developed for academic purposes.# Here are your Instructions
+This project is developed for academic purposes.
